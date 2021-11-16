@@ -9,6 +9,8 @@ cd backend
 
 nodemon backend
 
+Running Frontend
+
 Create another terminal
 
 cd frontend
