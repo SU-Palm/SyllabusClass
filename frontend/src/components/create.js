@@ -8,14 +8,16 @@ export default class Create extends Component {
     super(props);
  
     this.onChangePersonName = this.onChangePersonName.bind(this);
-    this.onChangePersonPosition = this.onChangePersonPosition.bind(this);
-    this.onChangePersonLevel = this.onChangePersonLevel.bind(this);
+    this.onChangeClassName = this.onChangeClassName.bind(this);
+    this.onChangeDate= this.onChangeDate.bind(this);
+    this.onChangeClassNumber = this.onChangeClassNumber.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
  
     this.state = {
       person_name: "",
-      person_position: "",
-      person_level: "",
+      class_name: "",
+      date_created: "",
+      class_number: "",
     };
   }
  
@@ -26,18 +28,23 @@ export default class Create extends Component {
     });
   }
  
-  onChangePersonPosition(e) {
+  onChangeClassName(e) {
     this.setState({
-      person_position: e.target.value,
+      class_name: e.target.value,
+    });
+  }
+
+  onChangeDate(e) {
+    this.setState({
+      date_created: e.target.value,
     });
   }
  
-  onChangePersonLevel(e) {
+  onChangeClassNumber(e) {
     this.setState({
-      person_level: e.target.value,
+      class_number: e.target.value,
     });
   }
- 
 // This function will handle the submission.
   onSubmit(e) {
     e.preventDefault();
@@ -45,8 +52,9 @@ export default class Create extends Component {
     // When post request is sent to the create url, axios will add a new record(newperson) to the database.
     const newperson = {
       person_name: this.state.person_name,
-      person_position: this.state.person_position,
-      person_level: this.state.person_level,
+      class_name: this.state.class_name,
+      date_created: this.state.date_created,
+      class_number: this.state.class_number,
     };
  
     axios
@@ -56,8 +64,9 @@ export default class Create extends Component {
     // We will empty the state after posting the data to the database
     this.setState({
       person_name: "",
-      person_position: "",
-      person_level: "",
+      class_name: "",
+      date_created: "",
+      class_number: "",
     });
   }
  
@@ -65,10 +74,10 @@ export default class Create extends Component {
   render() {
     return (
       <div style={{ marginTop: 20 }}>
-        <h3>Create New Record</h3>
+        <h3>Upload Syllabus</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label>Name of the person: </label>
+            <label> Name </label>
             <input
               type="text"
               className="form-control"
@@ -77,56 +86,37 @@ export default class Create extends Component {
             />
           </div>
           <div className="form-group">
-            <label>Person's position: </label>
+            <label>Class Name</label>
+            <input
+              type="text"
+              className="form-control"
+              value={this.state.class_name}
+              onChange={this.onChangeClassName}
+            />
+          </div>
+          <div className="form-group">
+            <label>Class Number</label>
             <input
               type="text"
               className="form-control"
               value={this.state.person_position}
-              onChange={this.onChangePersonPosition}
+              onChange={this.onChangeClassNumber}
             />
           </div>
           <div className="form-group">
-            <div className="form-check form-check-inline">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="priorityOptions"
-                id="priorityLow"
-                value="Intern"
-                checked={this.state.person_level === "Intern"}
-                onChange={this.onChangePersonLevel}
-              />
-              <label className="form-check-label">Intern</label>
-            </div>
-            <div className="form-check form-check-inline">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="priorityOptions"
-                id="priorityMedium"
-                value="Junior"
-                checked={this.state.person_level === "Junior"}
-                onChange={this.onChangePersonLevel}
-              />
-              <label className="form-check-label">Junior</label>
-            </div>
-            <div className="form-check form-check-inline">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="priorityOptions"
-                id="priorityHigh"
-                value="Senior"
-                checked={this.state.person_level === "Senior"}
-                onChange={this.onChangePersonLevel}
-              />
-              <label className="form-check-label">Senior</label>
-            </div>
+            <label>Date Created</label>
+            <input
+              type="text"
+              className="form-control"
+              value={this.state.date_created}
+              onChange={this.onChangeDate}
+            />
           </div>
+          
           <div className="form-group">
             <input
               type="submit"
-              value="Create person"
+              value="Submit"
               className="btn btn-primary"
             />
           </div>

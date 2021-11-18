@@ -9,14 +9,14 @@ class Edit extends Component {
     super(props);
  
     this.onChangePersonName = this.onChangePersonName.bind(this);
-    this.onChangePersonPosition = this.onChangePersonPosition.bind(this);
-    this.onChangePersonLevel = this.onChangePersonLevel.bind(this);
+    this.onChangeClassName = this.onChangeClassName.bind(this);
+    this.onChangeClassNumber = this.onChangeClassNumber.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
  
     this.state = {
       person_name: "",
-      person_position: "",
-      person_level: "",
+      class_name: "",
+      class_number: "",
       records: [],
     };
   }
@@ -27,8 +27,8 @@ class Edit extends Component {
       .then((response) => {
         this.setState({
           person_name: response.data.person_name,
-          person_position: response.data.person_position,
-          person_level: response.data.person_level,
+          class_name: response.data.class_name,
+          class_number: response.data.class_number,
         });
       })
       .catch(function (error) {
@@ -43,13 +43,13 @@ class Edit extends Component {
     });
   }
  
-  onChangePersonPosition(e) {
+  onChangeClassName(e) {
     this.setState({
       person_position: e.target.value,
     });
   }
  
-  onChangePersonLevel(e) {
+  onChangeClassNumber(e) {
     this.setState({
       person_level: e.target.value,
     });
@@ -60,8 +60,8 @@ class Edit extends Component {
     e.preventDefault();
     const newEditedperson = {
       person_name: this.state.person_name,
-      person_position: this.state.person_position,
-      person_level: this.state.person_level,
+      class_name: this.state.class_name,
+      class_number: this.state.class_number,
     };
     console.log(newEditedperson);
  
@@ -96,11 +96,11 @@ class Edit extends Component {
             <input
               type="text"
               className="form-control"
-              value={this.state.person_position}
-              onChange={this.onChangePersonPosition}
+              value={this.state.class_name}
+              onChange={this.onChangeClassName}
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <div className="form-check form-check-inline">
               <input
                 className="form-check-input"
@@ -112,8 +112,8 @@ class Edit extends Component {
                 onChange={this.onChangePersonLevel}
               />
               <label className="form-check-label">Intern</label>
-            </div>
-            <div className="form-check form-check-inline">
+            </div> */}
+            {/* <div className="form-check form-check-inline">
               <input
                 className="form-check-input"
                 type="radio"
@@ -124,8 +124,8 @@ class Edit extends Component {
                 onChange={this.onChangePersonLevel}
               />
               <label className="form-check-label">Junior</label>
-            </div>
-            <div className="form-check form-check-inline">
+            </div> */}
+            {/* <div className="form-check form-check-inline">
               <input
                 className="form-check-input"
                 type="radio"
@@ -138,7 +138,7 @@ class Edit extends Component {
               <label className="form-check-label">Senior</label>
             </div>
           </div>
-          <br />
+          <br /> */}
  
           <div className="form-group">
             <input

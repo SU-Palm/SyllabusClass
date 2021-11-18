@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 const Record = (props) => (
   <tr>
     <td>{props.record.person_name}</td>
-    <td>{props.record.person_position}</td>
-    <td>{props.record.person_level}</td>
+    <td>{props.record.class_name}</td>
+    <td>{props.record.class_number}</td>
+    <td>{props.record.date_created}</td>
     <td>
       <Link to={"/edit/" + props.record._id}>Edit</Link> |
       <a
@@ -70,14 +71,16 @@ export default class RecordList extends Component {
   render() {
     return (
       <div>
-        <h3>Record List</h3>
+        <h3 style={{alignItems:'itallics'}}id="syllabusText">Syllabi Uploaded</h3>
+        
         <table className="table table-striped" style={{ marginTop: 20 }}>
           <thead>
             <tr>
               <th>Name</th>
-              <th>Position</th>
-              <th>Level</th>
-              <th>Action</th>
+              <th>Class Name</th>
+              <th>Class Number</th>
+              <th>Date</th>
+              <th>View</th>
             </tr>
           </thead>
           <tbody>{this.recordList()}</tbody>
@@ -86,3 +89,7 @@ export default class RecordList extends Component {
     );
   }
 }
+
+
+
+
