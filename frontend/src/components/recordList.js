@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // This will require to npm install axios
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import {BsFillArrowRightCircleFill} from 'react-icons/bs';
 
 const Record = (props) => (
   <tr>
@@ -71,7 +72,7 @@ export default class RecordList extends Component {
   render() {
     return (
       <div>
-        <h3 style={{alignItems:'itallics'}}id="syllabusText">Syllabi Uploaded</h3>
+        <h3 style={{paddingLeft: 5}}id="syllabusText">Syllabi Uploaded</h3>
         
         <table className="table table-striped" style={{ marginTop: 20 }}>
           <thead>
@@ -80,7 +81,8 @@ export default class RecordList extends Component {
               <th>Class Name</th>
               <th>Class Number</th>
               <th>Date</th>
-              <th>View</th>
+              <th>Edit/Delete</th>
+
             </tr>
           </thead>
           <tbody>{this.recordList()}</tbody>

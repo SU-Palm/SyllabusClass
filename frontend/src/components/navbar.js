@@ -39,7 +39,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/login">
+              <NavLink style={{paddingLeft: 860}}className="nav-link" to="/login">
                 Logout
               </NavLink>
             </li>
