@@ -2,7 +2,6 @@ import React, { Component } from "react";
 // This will require to npm install axios
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import {BsFillArrowRightCircleFill} from 'react-icons/bs';
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import PropTypes from "prop-types";
@@ -74,7 +73,6 @@ class RecordList extends Component {
 
   // This following section will display the table with the records of individuals.
   render() {
-    const { user } = this.props.auth;
     return (
       <div>
         <h3 style={{paddingLeft: 5}}id="syllabusText">Syllabi Uploaded</h3>
@@ -92,19 +90,6 @@ class RecordList extends Component {
           </thead>
           <tbody>{this.recordList()}</tbody>
         </table>
-        <button 
-          type="button"
-              style={{
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginTop: "1rem"
-              }}
-              onClick={this.onLogoutClick}
-              className="btn"
-          >
-              Logout
-        </button>
       </div>
     );
   }
