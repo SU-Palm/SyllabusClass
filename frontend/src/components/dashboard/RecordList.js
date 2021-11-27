@@ -75,11 +75,11 @@ class RecordList extends Component {
   // This following section will display the table with the records of individuals.
   render() {
     return (
-      <div className="center">
+      <div>
         <SearchBar />
         <div style={{paddingBottom: 15}}></div>
         <h3 id="syllabusText">Syllabi Uploaded</h3>
-        <table className="table table-striped" style={{ marginTop: 20 }}>
+        <table className="table table-striped" style={{ marginTop: 20}}>
           <thead>
             <tr>
               <th>Name</th>
@@ -87,7 +87,6 @@ class RecordList extends Component {
               <th>Class Number</th>
               <th>Date</th>
               <th>Edit/Delete</th>
-
             </tr>
           </thead>
           <tbody>{this.recordList()}</tbody>
