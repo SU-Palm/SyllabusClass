@@ -92,7 +92,7 @@ class Edit extends Component {
             />
           </div>
           <div className="form-group">
-            <label>Position: </label>
+            <label>Class Name: </label>
             <input
               type="text"
               className="form-control"

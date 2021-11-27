@@ -16,7 +16,7 @@ const Record = (props) => (
     <td>
       <Link to={"/edit/" + props.record._id}>Edit</Link> |
       <a
-        href="/"
+        href="/dasboard"
         onClick={() => {
           props.deleteRecord(props.record._id);
         }}
@@ -77,7 +77,8 @@ class RecordList extends Component {
     return (
       <div className="center">
         <SearchBar />
-        <h3 style={{paddingLeft: 5}}id="syllabusText">Syllabi Uploaded</h3>
+        <div style={{paddingBottom: 15}}></div>
+        <h3 id="syllabusText">Syllabi Uploaded</h3>
         <table className="table table-striped" style={{ marginTop: 20 }}>
           <thead>
             <tr>

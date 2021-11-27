@@ -15,7 +15,7 @@ const SearchBar = () => {
 
   return (
     <div>
-      <div style={{paddingLeft: 540}}>
+      <div style={{paddingLeft: 5}}>
       <Search 
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}/>

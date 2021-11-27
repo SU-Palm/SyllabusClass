@@ -19,13 +19,13 @@ class Navbar extends Component {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <NavLink className="navbar-brand" to="/dashboard">
+          <NavLink className="navbar-brand" to="/dashboard" style={{fontSize: 25}}> 
             Syallabi 
           </NavLink>   
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/create">
+                <NavLink className="nav-link" to="/create" style={{fontSize: 20}}>
                   Upload Syllabus 
                 </NavLink>
               </li>

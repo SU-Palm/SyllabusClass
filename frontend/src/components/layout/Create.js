@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // This will require to npm install axios
 import axios from 'axios';
+
  
 export default class Create extends Component {
   // This is the constructor that stores the data.
@@ -77,7 +78,7 @@ export default class Create extends Component {
         <h3>Upload Syllabus</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label> Name </label>
+            <label style={{paddingLeft: 5, fontSize: 15}}>Name</label>
             <input
               type="text"
               className="form-control"
@@ -86,7 +87,7 @@ export default class Create extends Component {
             />
           </div>
           <div className="form-group">
-            <label>Class Name</label>
+            <label style={{paddingLeft: 5, fontSize: 15}}>Class Name</label>
             <input
               type="text"
               className="form-control"
@@ -95,7 +96,7 @@ export default class Create extends Component {
             />
           </div>
           <div className="form-group">
-            <label>Class Number</label>
+            <label style={{paddingLeft: 5, fontSize: 15}}>Class Number</label>
             <input
               type="text"
               className="form-control"
@@ -104,7 +105,7 @@ export default class Create extends Component {
             />
           </div>
           <div className="form-group">
-            <label>Date Created</label>
+            <label style={{paddingLeft: 5, fontSize: 15}}>Date Created</label>
             <input
               type="text"
               className="form-control"
