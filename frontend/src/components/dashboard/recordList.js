@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import PropTypes from "prop-types";
+import SearchBar from "../layout/SearchBar";
 
 const Record = (props) => (
   <tr>
@@ -74,9 +75,9 @@ class RecordList extends Component {
   // This following section will display the table with the records of individuals.
   render() {
     return (
-      <div>
+      <div className="center">
+        <SearchBar />
         <h3 style={{paddingLeft: 5}}id="syllabusText">Syllabi Uploaded</h3>
-        
         <table className="table table-striped" style={{ marginTop: 20 }}>
           <thead>
             <tr>

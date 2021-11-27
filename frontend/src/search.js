@@ -1,5 +1,5 @@
-const SearchBar = ({searchQuery, setSearchQuery}) => (
-    <form action="/" method="get">
+const Search = ({searchQuery, setSearchQuery}) => (
+    <form action="/dashboard" method="get">
         <label htmlFor="header-search">
             <span className="visually-hidden">Search Syllabi</span>
         </label>
@@ -15,4 +15,4 @@ const SearchBar = ({searchQuery, setSearchQuery}) => (
     </form>
 );
 
-export default SearchBar;
+export default Search;

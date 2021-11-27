@@ -10,9 +10,10 @@ import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
-import Dashboard from "./components/dashboard/RecordList";
-import Edit from "./components/layout/edit";
-import Create from "./components/layout/create";
+import Edit from "./components/layout/Edit";
+import Create from "./components/layout/Create";
+import RecordList from "./components/dashboard/RecordList";
+
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -48,7 +49,7 @@ class App extends Component {
             </Route>
             <Route path="/edit/:id" component={Edit} />
             <Switch>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/dashboard" component={RecordList} />
             </Switch>
           </div>
         </Router>
@@ -56,4 +57,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;
