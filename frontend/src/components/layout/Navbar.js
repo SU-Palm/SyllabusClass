@@ -29,6 +29,11 @@ class Navbar extends Component {
                   Upload Syllabus 
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/profile" style={{fontSize: 20}}>
+                  My Profile
+                </NavLink>
+              </li>
             </ul>
           </div>
                 <button 

@@ -47,6 +47,7 @@ class App extends Component {
             <Route path="/create">
               <Create />
             </Route>
+            {/* add profile link */}
             <Route path="/edit/:id" component={Edit} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={RecordList} />
