@@ -13,6 +13,7 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import Edit from "./components/layout/Edit";
 import Create from "./components/layout/Create";
 import RecordList from "./components/dashboard/RecordList";
+import Profile from "./components/layout/Profile";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -44,6 +45,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/profile" component={Profile} />
             <Route path="/create">
               <Create />
             </Route>

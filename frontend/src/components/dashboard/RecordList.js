@@ -31,7 +31,6 @@ class RecordList extends Component {
   // This is the constructor that shall store our data retrieved from the database
   constructor(props) {
     super(props);
-    this.deleteRecord = this.deleteRecord.bind(this);
     this.state = { records: [] };
   }
 
