@@ -44,6 +44,7 @@ recordRoutes.route("/record/add").post(function (req, response) {
     class_name: req.body.class_name,
     date_created: req.body.date_created,
     class_number: req.body.class_number,
+    class_pdf: req.body.class_pdf,
   };
   db_connect.collection("records").insertOne(myobj, function (err, res) {
     if (err) throw err;
@@ -61,6 +62,7 @@ recordRoutes.route("/update/:id").post(function (req, response) {
       class_name: req.body.class_name,
       class_number: req.body.class_number,
       date_created: req.body.date_created,
+      class_pdf: req.body.class_pdf,
     },
   };
   db_connect

@@ -29,6 +29,7 @@ class Edit extends Component {
           person_name: response.data.person_name,
           class_name: response.data.class_name,
           class_number: response.data.class_number,
+          class_pdf: response.data.class_pdf,
         });
       })
       .catch(function (error) {
@@ -54,6 +55,7 @@ class Edit extends Component {
       person_level: e.target.value,
     });
   }
+  
  
   // This function will handle the submission.
   onSubmit(e) {
@@ -62,6 +64,7 @@ class Edit extends Component {
       person_name: this.state.person_name,
       class_name: this.state.class_name,
       class_number: this.state.class_number,
+      class_pdf: this.state.class_pdf,
     };
     console.log(newEditedperson);
  

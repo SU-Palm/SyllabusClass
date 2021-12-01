@@ -14,6 +14,7 @@ import Edit from "./components/layout/Edit";
 import Create from "./components/layout/Create";
 import RecordList from "./components/dashboard/RecordList";
 import Profile from "./components/layout/Profile";
+import View from "./components/layout/View";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -54,6 +55,9 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={RecordList} />
             </Switch>
+            <Route path="/view">
+              <View />
+            </Route>
           </div>
         </Router>
       </Provider>
