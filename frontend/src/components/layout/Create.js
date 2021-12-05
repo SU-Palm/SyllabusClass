@@ -46,6 +46,7 @@ export default class Create extends Component {
       class_number: e.target.value,
     });
   }
+
 // This function will handle the submission.
   onSubmit(e) {
     e.preventDefault();
@@ -114,12 +115,19 @@ export default class Create extends Component {
             <input
               type="text"
               className="form-control"
-              value={this.state.person_position}
+              value={this.state.class_number}
               onChange={this.onChangeClassNumber}
             />
           </div>
           
           <div className="form-group">
+            <label style={{paddingLeft: 5, fontSize: 15}}>File Upload</label>
+            <input
+              type="file"
+            />
+          </div>
+
+          <div style={{paddingTop: 10}} className="form-group">
             <input
               type="submit"
               value="Submit"

@@ -13,16 +13,21 @@ const Record = (props) => (
     <td>{props.record.class_name}</td>
     <td>{props.record.class_number}</td>
     <td>{props.record.date_created}</td>
+    <td>{props.record.class_pdf}</td>
+
     <td>
       <Link to={"/edit/" + props.record._id}>Edit</Link> |
       <a
-        href="/dasboard"
+        href="/dashboard"
         onClick={() => {
           props.deleteRecord(props.record._id);
         }}
       >
         Delete
       </a>
+    </td>
+    <td>
+      <Link to={"/view/" + props.record._id}>View</Link> 
     </td>
   </tr>
 );
@@ -85,7 +90,9 @@ class RecordList extends Component {
               <th>Class Name</th>
               <th>Class Number</th>
               <th>Date</th>
+              <th></th>
               <th>Edit/Delete</th>
+              <th>View</th> 
             </tr>
           </thead>
           <tbody>{this.recordList()}</tbody>

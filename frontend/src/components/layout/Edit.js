@@ -11,12 +11,14 @@ class Edit extends Component {
     this.onChangePersonName = this.onChangePersonName.bind(this);
     this.onChangeClassName = this.onChangeClassName.bind(this);
     this.onChangeClassNumber = this.onChangeClassNumber.bind(this);
+    this.onChangeDate= this.onChangeDate.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
  
     this.state = {
       person_name: "",
       class_name: "",
       class_number: "",
+      date_created: "",
       records: [],
     };
   }
@@ -29,6 +31,7 @@ class Edit extends Component {
           person_name: response.data.person_name,
           class_name: response.data.class_name,
           class_number: response.data.class_number,
+          date_created: response.data.date_created,
         });
       })
       .catch(function (error) {
@@ -45,15 +48,23 @@ class Edit extends Component {
  
   onChangeClassName(e) {
     this.setState({
-      person_position: e.target.value,
+      class_name: e.target.value,
     });
   }
  
   onChangeClassNumber(e) {
     this.setState({
-      person_level: e.target.value,
+      class_number: e.target.value,
     });
   }
+
+  onChangeDate(e) {
+    this.setState({
+      date_created: e.target.value,
+    });
+  }
+
+  
  
   // This function will handle the submission.
   onSubmit(e) {
@@ -62,6 +73,7 @@ class Edit extends Component {
       person_name: this.state.person_name,
       class_name: this.state.class_name,
       class_number: this.state.class_number,
+      date_created: this.state.date_created,
     };
     console.log(newEditedperson);
  
@@ -98,6 +110,26 @@ class Edit extends Component {
               className="form-control"
               value={this.state.class_name}
               onChange={this.onChangeClassName}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Class Number: </label>
+            <input
+              type="text"
+              className="form-control"
+              value={this.state.class_number}
+              onChange={this.onChangeClassNumber}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Date: </label>
+            <input
+              type="text"
+              className="form-control"
+              value={this.state.class_date}
+              onChange={this.onChangeDate}
             />
           </div>
           {/* <div className="form-group">
