@@ -19,7 +19,6 @@ export default class Create extends Component {
       class_name: "",
       date_created: "",
       class_number: "",
-      class_pdf: "",
     };
   }
  
@@ -48,11 +47,6 @@ export default class Create extends Component {
     });
   }
 
-  onChangeClassPdf(e) {
-    this.setState({
-      class_pdf: e.target.file,
-    });
-  }
 // This function will handle the submission.
   onSubmit(e) {
     e.preventDefault();
@@ -63,7 +57,6 @@ export default class Create extends Component {
       class_name: this.state.class_name,
       date_created: this.state.date_created,
       class_number: this.state.class_number,
-      class_pdf: this.state.class_pdf,
     };
  
     axios
@@ -76,7 +69,6 @@ export default class Create extends Component {
       class_name: "",
       date_created: "",
       class_number: "",
-      class_pdf: "",
     });
   }
  
@@ -109,7 +101,7 @@ export default class Create extends Component {
             <input
               type="text"
               className="form-control"
-              value={this.state.person_position}
+              value={this.state.class_number}
               onChange={this.onChangeClassNumber}
             />
           </div>
@@ -127,13 +119,10 @@ export default class Create extends Component {
             <label style={{paddingLeft: 5, fontSize: 15}}>File Upload</label>
             <input
               type="file"
-              className="form-control"
-              value={this.state.class_pdf}
-              onChange={this.onChangeClassPdf}
             />
           </div>
 
-          <div className="form-group">
+          <div style={{paddingTop: 10}} className="form-group">
             <input
               type="submit"
               value="Submit"

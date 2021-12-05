@@ -11,8 +11,7 @@ class View extends Component {
             this.setState({
               person_name: response.data.person_name,
               class_name: response.data.class_name,
-              class_number: response.data.class_number,
-              class_pdf: response.data.class_pdf,
+              class_number: response.data.class_number
             });
           })
           .catch(function (error) {
