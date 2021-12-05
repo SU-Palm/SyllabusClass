@@ -49,12 +49,26 @@ export default class Create extends Component {
 // This function will handle the submission.
   onSubmit(e) {
     e.preventDefault();
- 
+    if (this.state.class_number.length != 3){
+      alert("Please enter a proper 3 digit class number");
+      return;
+    }
+    else {
+      alert("Submitted New Syallabus Successfully!");
+    }
+
+    var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+
+  today = mm + '/' + dd + '/' + yyyy;
+
     // When post request is sent to the create url, axios will add a new record(newperson) to the database.
     const newperson = {
       person_name: this.state.person_name,
       class_name: this.state.class_name,
-      date_created: this.state.date_created,
+      date_created: today,
       class_number: this.state.class_number,
     };
  
@@ -102,15 +116,6 @@ export default class Create extends Component {
               className="form-control"
               value={this.state.person_position}
               onChange={this.onChangeClassNumber}
-            />
-          </div>
-          <div className="form-group">
-            <label style={{paddingLeft: 5, fontSize: 15}}>Date Created</label>
-            <input
-              type="text"
-              className="form-control"
-              value={this.state.date_created}
-              onChange={this.onChangeDate}
             />
           </div>
           
