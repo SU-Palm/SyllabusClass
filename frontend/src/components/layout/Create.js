@@ -13,12 +13,15 @@ export default class Create extends Component {
     this.onChangeDate= this.onChangeDate.bind(this);
     this.onChangeClassNumber = this.onChangeClassNumber.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
+
  
     this.state = {
       person_name: "",
       class_name: "",
       date_created: "",
       class_number: "",
+      file: null,
     };
   }
  
@@ -50,6 +53,13 @@ export default class Create extends Component {
 // This function will handle the submission.
   onSubmit(e) {
     e.preventDefault();
+    const formData = new formData();
+    formData.append('myfile', this.state.file);
+    const config = {
+      headers: {
+        'content-type': 'multipart/form-data'
+      }
+    }
  
     // When post request is sent to the create url, axios will add a new record(newperson) to the database.
     const newperson = {
@@ -60,8 +70,9 @@ export default class Create extends Component {
     };
  
     axios
-      .post("/record/add", newperson)
-      .then((res) => console.log(res.data));
+      .post("/record/add", newperson, formData, config)
+      .then((res) => 
+        console.log(res.data));
  
     // We will empty the state after posting the data to the database
     this.setState({
@@ -71,6 +82,10 @@ export default class Create extends Component {
       class_number: "",
     });
   }
+
+    onChange(e) {
+      this.setState({file:e.target.files});
+    }
  
   // This following section will display the form that takes the input from the user.
   render() {
@@ -116,18 +131,12 @@ export default class Create extends Component {
           </div>
           
           <div className="form-group">
-            <label style={{paddingLeft: 5, fontSize: 15}}>File Upload</label>
-            <input
-              type="file"
-            />
-          </div>
-
-          <div style={{paddingTop: 10}} className="form-group">
-            <input
-              type="submit"
-              value="Submit"
-              className="btn btn-primary"
-            />
+            <form onSubmit={this.onFormSubmit}>
+              <h1>File Upload</h1>
+              <input type="file" className="custom-file-input" name="myImage" onChange= {this.onChange} />
+              {console.log(this.state.file)}
+              <button className="upload-button" type="submit">Upload Syllabus</button>
+          </form>
           </div>
         </form>
       </div>
