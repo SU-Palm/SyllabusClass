@@ -17,19 +17,41 @@ import SearchBar from "../layout/SearchBar";
 
 
 class Profile extends Component {
+  onLogoutClick = e => {
+    e.preventDefault();
+    this.props.logoutUser();
+  };
         render(){
+          const { user } = this.props.auth;
             return (
-              <div class="center">
+              <div>
                   <br/>
                 <h2> User Profile </h2>
                 <br/>
-                <h3> name goes here </h3>
-                <h3> email goes here </h3>
+                <h3 style={{paddingLeft: 20}}> {user.name} </h3>
+                <h3> {user.email} </h3>
+                <h3> {user.date} </h3>
                 <br/>
-                <h4> possibly add list of syllabuses user uploaded</h4>
+                <h4> [add list of syllabuses user uploaded?]</h4>
               </div>
+
+
+
+
             );
           }
 }
 
-export default Profile;
+Profile.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect (
+  mapStateToProps,
+  { logoutUser }
+)(Profile);
