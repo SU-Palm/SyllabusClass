@@ -55,9 +55,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={RecordList} />
             </Switch>
-            <Route path="/view">
-              <View />
-            </Route>
+            <Route path="/view/:id" component={View} />
           </div>
         </Router>
       </Provider>

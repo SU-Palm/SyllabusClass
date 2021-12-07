@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // This will require to npm install axios
 import axios from 'axios';
+import FilesUploadComponent from "../files-upload-component";
 
  
 export default class Create extends Component {
@@ -114,14 +115,7 @@ export default class Create extends Component {
               onChange={this.onChangeDate}
             />
           </div>
-          
-          <div className="form-group">
-            <label style={{paddingLeft: 5, fontSize: 15}}>File Upload</label>
-            <input
-              type="file"
-            />
-          </div>
-
+          <FilesUploadComponent />
           <div style={{paddingTop: 10}} className="form-group">
             <input
               type="submit"
