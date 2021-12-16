@@ -14,8 +14,6 @@ import SearchBar from "../layout/SearchBar";
     </tr>
   ); */
 
-
-
 class Profile extends Component {
         render(){
             return (
@@ -23,10 +21,9 @@ class Profile extends Component {
                   <br/>
                 <h2> User Profile </h2>
                 <br/>
-                <h3> name goes here </h3>
-                <h3> email goes here </h3>
+                <h3> Joseph Balascio </h3>
+                <h3> testacc5@syr.edu </h3>
                 <br/>
-                <h4> possibly add list of syllabuses user uploaded</h4>
               </div>
             );
           }

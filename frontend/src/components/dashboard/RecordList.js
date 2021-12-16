@@ -14,7 +14,7 @@ const Record = (props) => (
     <td>{props.record.class_number}</td>
     <td>{props.record.date_created}</td>
     <td>{props.record.class_pdf}</td>
-
+    
     <td>
       <Link to={"/edit/" + props.record._id}>Edit</Link> |
       <a

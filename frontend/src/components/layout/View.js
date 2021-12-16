@@ -38,6 +38,7 @@ class ViewList extends Component {
         <h3>Class Name: {this.state.class_name}</h3>
         <h3>Class Number: {this.state.class_number}</h3>
         <h3>Class Date: {this.state.date_created}</h3>
+        <a href="https://imgur.com/2c2Qj8t"><img src="https://i.imgur.com/2c2Qj8t.jpg" title="source: imgur.com" style={{width:"600px",height:"800px",}}/></a>  
       </div>
     );
   }

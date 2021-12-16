@@ -1,18 +1,33 @@
 # SyllabusClass
 For CSE 400 Web Arch at Syracuse University
 
-How to Run
+Quick Qescription:
+This project is a syllabus uploading website that allows users to view classes that are generated and posted to the mongodb database.
+Currently the syllabus uploading is broken and cannot upload any syllabus due to not having enough knowledge on the coding language we used.
 
-Running Backend
+How to Run this project
+In order to run this project you first need to build the node modules for the front end and back end. You need node.js installed and you
+also need npm enabled within your command line. 
 
-cd backend
+1. C:\SyllabusClass> cd frontend
 
-nodemon backend
+2. C:\SyllabusClass\frontend> npm install
 
-Running Frontend
+This command will install the required modules for frotnend into the frontend library.
 
-Create another terminal
+3. C:\SyllabusClass\frontend> cd ..
 
-cd frontend
+4. C:\SyllabusClass> cd backend
 
-npm start
+5. C:\SyllabusClass\backend> npm install
+
+This command will install the required modules for backend into the backend library.
+
+6. C:\SyllabusClass\backend> cd ..
+
+7. C:\SyllabusClass> cd frontend
+
+8. C:\SyllabusClass\frontend> npm run dev
+
+Running this last command will start the frontend and back end concurrently. Once this is up your browser should automatically open up
+in the browser. 
